@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets'
+import BaseLayout from '~/layouts/base-layout.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '~/consts'
+import { heavens, astronautMoon, astronautPlanet, futureHuman } from '~/assets'
+import { Button } from '~/components/ui/button'
+---
+
+<BaseLayout site_title={SITE_TITLE} site_description={SITE_DESCRIPTION}>
+  <section
+    class="relative flex min-h-screen flex-col border-solid bg-[url('../assets/heavens.webp')] bg-cover bg-no-repeat md:min-h-[600px] md:bg-[url('../assets/heavens.webp')]"
+  >
+    <div
+      class='container mx-auto mt-32 flex h-[500px] max-w-7xl flex-col items-center justify-center gap-4 p-8 md:items-start md:justify-end'
+    >
+      <p class='text-5xl text-background'>Elevate your everyday</p>
+      <p class='text-2xl text-background'>
+        Effective. Eco-friendly. Made with clean ingredients.
+      </p>
+      <Button class='rounded-full' size='lg'>Buy Now</Button>
+    </div>
+  </section>
+  <section>
+    <div class='container mx-auto mt-16 flex max-w-7xl justify-center p-8'>
+      <div class='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
+        <div class='flex w-80 flex-col gap-4'>
+          <div
+            class="h-[500px] w-auto bg-[url('../assets/astronaut_moon.webp')] bg-cover hover:bg-[url('../assets/astronaut_planet.webp')]"
+          >
+          </div>
+          <!-- <Image src={astronautMoon} alt='' /> -->
+          <p class='text-center'>Here</p>
+          <Button class='rounded-full'>Buy Now</Button>
+        </div>
+
+        <div class='flex w-80 flex-col gap-4'>
+          <div
+            class="h-[500px] w-auto bg-[url('../assets/astronaut_planet.webp')] bg-cover hover:bg-[url('../assets/astronaut_moon.webp')]"
+          >
+          </div>
+          <!-- <Image src={astronautMoon} alt='' /> -->
+          <p class='text-center'>Here</p>
+          <Button class='rounded-full'>Buy Now</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
