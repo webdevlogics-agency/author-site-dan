@@ -1,0 +1,53 @@
+---
+import { Image } from 'astro:assets'
+import { futureHumanFront } from '~/assets'
+import { Button } from '~/components/ui/button'
+import { SITE_DESCRIPTION_FUTURE, SITE_TITLE_FUTURE } from '~/consts'
+
+import BaseLayout from '~/layouts/base-layout.astro'
+---
+
+<BaseLayout
+  site_title={SITE_TITLE_FUTURE}
+  site_description={SITE_DESCRIPTION_FUTURE}
+>
+  <section class='mt-32 bg-secondary'>
+    <div class='container mx-auto max-w-5xl p-8'>
+      <div class='grid grid-cols-1 gap-8 md:grid-cols-2'>
+        <Image
+          src={futureHumanFront}
+          alt='Beyond Front Cover'
+          format='avif'
+          class='h-96 w-auto'
+        />
+        <div class='flex flex-col gap-8'>
+          <p class='text-3xl'>INTO THE BEYOND</p>
+          <p>In this stunning conclusion. What will the future hold?</p>
+          <Button size='lg'>BUY NOW</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='mt-32'>
+    <div class='container mx-auto max-w-3xl p-8'>
+      <p class='text-3xl'>SYNOPSIS</p>
+      <p class='mt-16'>
+        Hugo Enkows is back for the final installment of his thrilling science
+        fiction adventure series. In this epic conclusion, Hugo will face his
+        greatest challenge yet.
+      </p>
+      <p class='mt-4'>
+        The evil force that Hugo has been fighting against is finally ready to
+        make its move. It has gathered a vast army and is preparing to invade
+        Hugo's world. Hugo must team up with his friends and allies to stop this
+        invasion and save the world.
+      </p>
+      <p class='mt-4'>
+        In the final battle, Hugo will be tested to his limits. He will have to
+        use all of his strength and cunning to defeat the evil force. He will
+        also have to make a difficult choice that will have a profound impact on
+        his own life and the future of the world.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

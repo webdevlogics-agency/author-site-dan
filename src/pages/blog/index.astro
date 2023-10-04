@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets'
+
 import BaseLayout from '~/layouts/base-layout.astro'
 import FormattedDate from '~/components/formatted-date.astro'
 
-import { SITE_DESCRIPTION, SITE_TITLE } from '~/consts'
+import { SITE_DESCRIPTION_BLOG, SITE_TITLE_BLOG } from '~/consts'
 import { getCollection } from 'astro:content'
 
 const posts = (await getCollection('blog')).sort(
@@ -12,39 +14,40 @@ const posts = (await getCollection('blog')).sort(
 
 <BaseLayout
   title='BLOG HOME'
-  site_title={SITE_TITLE}
-  site_description={SITE_DESCRIPTION}
+  site_title={SITE_TITLE_BLOG}
+  site_description={SITE_DESCRIPTION_BLOG}
 >
-  <section
-    class='container mx-auto mt-32 flex w-full max-w-7xl flex-col items-center justify-center'
-  >
-    <div class='flex flex-col items-center gap-4'>
-      <h2
-        class='gradient-text tracking-light text-center text-4xl font-extrabold'
-      >
-        Dan Jinzle Blog
-      </h2>
-      <ul class='mt-20 grid h-full w-full grid-cols-1 gap-8 md:grid-cols-2'>
-        {
-          posts.map((post) => (
-            <li class='flex h-full w-full overflow-hidden text-center'>
-              <a href={`/blog/${post.slug}/`}>
-                <img
-                  src={post.data.heroImage}
-                  alt=''
-                  class='h-auto w-auto object-fill'
-                  height={576}
-                  width={1024}
-                />
-                <h4 class='text-primary'>{post.data.title}</h4>
-                <p>
-                  <FormattedDate date={post.data.pubDate} />
-                </p>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+  <section class='mt-32'>
+    <div
+      class='container mx-auto flex max-w-7xl flex-col items-center justify-center p-8'
+    >
+      <div class='flex flex-col items-center gap-4'>
+        <h2
+          class='gradient-text tracking-light text-center text-4xl font-extrabold'
+        >
+          Dan Jinzle Blog
+        </h2>
+        <ul class='mt-20 grid h-full w-full grid-cols-1 gap-8 md:grid-cols-2'>
+          {
+            posts.map((post) => (
+              <li class='flex h-full w-full overflow-hidden text-center'>
+                <a href={`/blog/${post.slug}/`}>
+                  <Image
+                    src={post.data.heroImage}
+                    alt=''
+                    class='h-auto w-auto object-fill'
+                    format='avif'
+                  />
+                  <h4 class='text-primary'>{post.data.title}</h4>
+                  <p>
+                    <FormattedDate date={post.data.pubDate} />
+                  </p>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   </section>
 </BaseLayout>

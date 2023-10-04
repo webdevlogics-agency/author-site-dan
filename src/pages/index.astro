@@ -2,8 +2,8 @@
 import { Image } from 'astro:assets'
 import BaseLayout from '~/layouts/base-layout.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '~/consts'
-import { heavens, astronautMoon, astronautPlanet, futureHuman } from '~/assets'
 import { Button } from '~/components/ui/button'
+import { treeHutch } from '~/assets'
 ---
 
 <BaseLayout site_title={SITE_TITLE} site_description={SITE_DESCRIPTION}>
@@ -13,36 +13,100 @@ import { Button } from '~/components/ui/button'
     <div
       class='container mx-auto mt-32 flex h-[500px] max-w-7xl flex-col items-center justify-center gap-4 p-8 md:items-start md:justify-end'
     >
-      <p class='text-5xl text-background'>Elevate your everyday</p>
-      <p class='text-2xl text-background'>
-        Effective. Eco-friendly. Made with clean ingredients.
+      <p class='text-5xl text-secondary'>
+        Exploring the Future Through Science Fiction.
       </p>
-      <Button class='rounded-full' size='lg'>Buy Now</Button>
+      <p class='text-2xl text-secondary'>Explore Dan Jinzle Books</p>
+      <a href='/contact'>
+        <Button class='rounded-full' size='lg'>CONTACT</Button>
+      </a>
     </div>
   </section>
-  <section>
-    <div class='container mx-auto mt-16 flex max-w-7xl justify-center p-8'>
-      <div class='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3'>
-        <div class='flex w-80 flex-col gap-4'>
+  <section class='mt-24'>
+    <p class='text-center text-5xl'>Future World Series</p>
+    <div class='container mx-auto flex max-w-7xl justify-center p-8'>
+      <div class='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
+        <div class='flex w-72 flex-col gap-4'>
           <div
-            class="h-[500px] w-auto bg-[url('../assets/astronaut_moon.webp')] bg-cover hover:bg-[url('../assets/astronaut_planet.webp')]"
+            class='h-[500px] w-auto bg-intoTheBeyondFront bg-cover hover:bg-intoTheBeyondBack'
           >
           </div>
           <!-- <Image src={astronautMoon} alt='' /> -->
-          <p class='text-center'>Here</p>
-          <Button class='rounded-full'>Buy Now</Button>
+          <p class='text-center'>Into The Beyond</p>
+          <a href='/books/into-the-beyond' class='text-center'>
+            <Button class='rounded-full'>READ MORE</Button>
+          </a>
         </div>
-
-        <div class='flex w-80 flex-col gap-4'>
+        <div class='flex w-72 flex-col gap-4'>
           <div
-            class="h-[500px] w-auto bg-[url('../assets/astronaut_planet.webp')] bg-cover hover:bg-[url('../assets/astronaut_moon.webp')]"
+            class='h-[500px] w-full bg-mistsOfSolarisFront bg-cover hover:bg-mistsOfSolarisBack'
           >
           </div>
           <!-- <Image src={astronautMoon} alt='' /> -->
-          <p class='text-center'>Here</p>
-          <Button class='rounded-full'>Buy Now</Button>
+          <p class='text-center'>Mists Of Solaris</p>
+          <a href='/books/mists-of-solaris' class='text-center'>
+            <Button class='rounded-full'>READ MORE</Button>
+          </a>
+        </div>
+        <div class='flex w-72 flex-col gap-4'>
+          <div
+            class='h-[500px] w-auto bg-futureHumanFront bg-cover hover:bg-futureHumanBack'
+          >
+          </div>
+          <!-- <Image src={astronautMoon} alt='' /> -->
+          <p class='text-center'>Future Human</p>
+          <a href='/books/future-human' class='text-center'>
+            <Button class='rounded-full'>READ MORE</Button>
+          </a>
         </div>
       </div>
+    </div>
+  </section>
+  <section class='mt-24'>
+    <div class='container mx-auto mt-24 flex max-w-7xl justify-center p-8'>
+      <div
+        class='flex h-[500px] w-full items-center justify-center gap-8 bg-seaBackground bg-cover'
+      >
+        <Image src={treeHutch} alt='' class='h-80 w-auto' />
+        <div class='flex flex-col gap-8 text-background'>
+          <p class='text-5xl'>The Tree Hutch</p>
+          <p class='text-2xl'>Humanity's last hope is a tree house.</p>
+          <a href='/books/the-tree-hutch'>
+            <Button class='full rounded'>READ MORE</Button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='mt-24 h-32'>
+    <div class='container mx-auto mt-24 flex max-w-4xl justify-center p-8'>
+      <p class='italic md:text-xl'>
+        "<span id='message'
+          >Dan's work is a must-read for fans of science fiction,
+          environmentalism, and thought-provoking literature.<span>"</span>
+        </span>
+        <script>
+          const wordsText = document.getElementById('message')
+          const wordsArray = [
+            "Dan's work is a must-read for fans of science fiction, environmentalism, and thought-provoking literature.",
+            "Dan's characters are complex and relatable, and his worlds are rich and immersive.",
+            'Dan is a writer who is not afraid to tackle big ideas, and his books will stay with you long after you finish reading them.',
+          ]
+          const path = window.location.pathname
+
+          if (path === '/') {
+            let i = 0
+            function changeWords() {
+              setInterval(function () {
+                wordsText.textContent =
+                  wordsArray[(i = (i + 1) % wordsArray.length)]
+              }, 3000)
+            }
+
+            changeWords()
+          }
+        </script>
+      </p>
     </div>
   </section>
 </BaseLayout>

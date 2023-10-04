@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 
 import BaseLayout from '~/layouts/base-layout.astro'
@@ -9,13 +10,13 @@ type Props = CollectionEntry<'blog'>['data']
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props
 ---
 
-<BaseLayout site_title='Dan Blog' site_description={description}>
+<BaseLayout site_title='Blog Article' site_description={description}>
   <div
-    class='prose prose-headings:text-foreground container m-auto max-w-7xl text-foreground'
+    class='prose prose-headings:text-foreground container m-auto mt-32 max-w-7xl text-foreground'
   >
     <article>
       <div class='flex justify-center'>
-        {heroImage && <img width={1020} height={510} src={heroImage} alt='' />}
+        {heroImage && <Image src={heroImage} alt='' format='avif' />}
       </div>
       <div class='px-4 py-4 text-base'>
         <div class='mb-4 px-0 py-4 text-center'>

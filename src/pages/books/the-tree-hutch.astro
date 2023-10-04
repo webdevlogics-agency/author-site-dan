@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets'
+import { treeHutch } from '~/assets'
+import { Button } from '~/components/ui/button'
+import { SITE_DESCRIPTION_TREE, SITE_TITLE_TREE } from '~/consts'
+
+import BaseLayout from '~/layouts/base-layout.astro'
+---
+
+<BaseLayout
+  site_title={SITE_TITLE_TREE}
+  site_description={SITE_DESCRIPTION_TREE}
+>
+  <section class='mt-32 bg-secondary'>
+    <div class='container mx-auto max-w-5xl p-8'>
+      <div class='grid grid-cols-1 gap-8 md:grid-cols-2'>
+        <Image
+          src={treeHutch}
+          alt='Beyond Front Cover'
+          format='avif'
+          class='h-96 w-auto'
+        />
+        <div class='flex flex-col gap-8'>
+          <p class='text-3xl'>THE TREE HUTCH</p>
+          <p>It began with a tree...</p>
+          <Button size='lg'>BUY NOW</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='mt-32'>
+    <div class='container mx-auto max-w-3xl p-8'>
+      <p class='text-3xl'>SYNOPSIS</p>
+      <p class='mt-16'>
+        In the post-apocalyptic future, humanity is on the brink of extinction.
+        A deadly virus has wiped out most of the population, and the survivors
+        are hunted by bloodthirsty mutants. A small group of survivors takes
+        refuge in a giant treehouse, hidden deep in the forest. They call it the
+        Tree Hutch, and it is their last hope for survival.
+      </p>
+      <p class='mt-4'>
+        But the mutants are not far behind. They are drawn to the Tree Hutch by
+        the survivors' body heat, and they are determined to destroy them. The
+        survivors must band together to defend the Tree Hutch and protect their
+        way of life. They must also find a way to cure the virus and save
+        humanity from extinction.
+      </p>
+      <p class='mt-4'>
+        The Tree Hutch is a thrilling science fiction novel about survival,
+        hope, and the power of the human spirit. It is a story that will keep
+        you on the edge of your seat until the very end.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

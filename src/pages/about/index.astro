@@ -1,11 +1,135 @@
 ---
+import { Image } from 'astro:assets'
+
 import BaseLayout from '~/layouts/base-layout.astro'
+import { SITE_TITLE_ABOUT, SITE_DESCRIPTION_ABOUT } from '~/consts'
+import { danJinzleAuthor, intoTheBeyondFront } from '~/assets'
 ---
 
-<BaseLayout site_title='About' site_description='ABOUT_DESC'>
-  <section>
-    <div>
-      <h1>About</h1>
+<BaseLayout
+  site_title={SITE_TITLE_ABOUT}
+  site_description={SITE_DESCRIPTION_ABOUT}
+>
+  <section class='mt-32 bg-secondary'>
+    <h1 class='text-center text-5xl'>Contact</h1>
+    <div class='container mx-auto max-w-7xl p-20'>
+      <div
+        class='grid grid-cols-1 items-center justify-center gap-8 md:grid-cols-2'
+      >
+        <div class='flex flex-col gap-4'>
+          <h1 class='text-3xl'>Dan Jinzle</h1>
+          <p>
+            Dan Jinzle is a science fiction author based in the Sierra
+            Mountains. He is known for his trilogy of novels, which explore the
+            human condition in the face of technological and social change. His
+            work is often praised for its prescient insights, its lush
+            descriptions of the natural world, and its complex characters.
+          </p>
+          <p>
+            Dan has a deep appreciation for the wilderness, and his love of
+            nature is evident throughout his writing. He is also a passionate
+            advocate for environmental conservation, and his work often explores
+            the themes of environmentalism and climate change.
+          </p>
+          <p>
+            Dan is a talented writer with a unique vision. His work is sure to
+            appeal to fans of science fiction, environmentalism, and
+            thought-provoking literature.
+          </p>
+          <p>
+            In addition to his writing, Dan is also a hiker, fisherman, and avid
+            reader. He enjoys spending time with his family and friends, and he
+            is always on the lookout for new and exciting science fiction
+            novels.
+          </p>
+        </div>
+        <Image src={danJinzleAuthor} alt='' class='h-[500px] w-auto' />
+      </div>
+    </div>
+  </section>
+  <section id='timeline' class='mt-32'>
+    <div class='container mx-auto max-w-3xl p-8'>
+      <div class='flex flex-col gap-8'>
+        <div class='flex gap-8'>
+          <p>2001</p>
+          <span class='border-r-4 border-yellow-500'></span>
+          <p>
+            Dan begins writing science fiction stories in elementary school.
+          </p>
+        </div>
+        <div class='flex gap-8'>
+          <p>2006</p>
+          <span class='border-r-4 border-yellow-500'></span>
+          <p>
+            Dan starts his first novel, a science fiction epic that he will work
+            on for the next several years.
+          </p>
+        </div>
+        <div class='flex gap-8'>
+          <p>2009</p>
+          <span class='border-r-4 border-yellow-500'></span>
+          <p>
+            Dan begins writing science fiction stories in elementary school.
+          </p>
+        </div>
+        <div class='flex gap-8'>
+          <p>2013</p>
+          <span class='border-r-4 border-yellow-500'></span>
+          <p>
+            Dan graduates from college and begins working as a park ranger in
+            Yosemite National Park.
+          </p>
+        </div>
+        <div class='flex gap-8'>
+          <p>2016</p>
+          <span class='border-r-4 border-yellow-500'></span>
+          <p>
+            Dan completes his first novel, a science fiction thriller titled
+            "Into The Beyond."
+          </p>
+        </div>
+        <div class='flex gap-8'>
+          <p>2017</p>
+          <span class='border-r-4 border-yellow-500'></span>
+          <div class='flex flex-col'>
+            <Image
+              src={intoTheBeyondFront}
+              alt=''
+              format='avif'
+              class='h-96 w-auto'
+            />
+            <p>Dan publishes his first novel, "Into The Beyond."</p>
+          </div>
+        </div>
+        <div class='flex gap-8'>
+          <p>2019</p>
+          <span class='border-r-4 border-yellow-500'></span>
+          <p>
+            Dan publishes the second book in his trilogy, "Mists of Solaris"
+          </p>
+        </div>
+        <div class='flex gap-8'>
+          <p>2021</p>
+          <span class='border-r-4 border-yellow-500'></span>
+          <p>Dan publishes the final book in his trilogy, "Future Human."</p>
+        </div>
+        <div class='flex gap-8'>
+          <p>2022</p>
+          <span class='border-r-4 border-yellow-500'></span>
+          <p>
+            Dan begins work on his next novel, a science fiction mystery set on
+            a distant planet.
+          </p>
+        </div>
+        <div class='flex gap-8'>
+          <p>2023</p>
+          <span class='border-r-4 border-yellow-500'></span>
+          <p>
+            Dan continues to work on his new novel, and he is also teaching a
+            writing class at a local community college.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>

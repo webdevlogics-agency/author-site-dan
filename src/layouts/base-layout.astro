@@ -7,13 +7,13 @@ const { site_title, site_description } = Astro.props
 ---
 
 <!doctype html>
-<html lang='en' transition:animate='slide'>
+<html lang='en'>
   <head>
     <BaseHead title={site_title} description={site_description} />
   </head>
   <body class='scroll-smooth text-base'>
     <Header title='Home' />
-    <main>
+    <main transition:animate='slide'>
       <slot />
     </main>
     <Footer />

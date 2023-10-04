@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets'
+import { mistsOfSolarisFront } from '~/assets'
+import { Button } from '~/components/ui/button'
+import { SITE_DESCRIPTION_MISTS, SITE_TITLE_MISTS } from '~/consts'
+
+import BaseLayout from '~/layouts/base-layout.astro'
+---
+
+<BaseLayout
+  site_title={SITE_TITLE_MISTS}
+  site_description={SITE_DESCRIPTION_MISTS}
+>
+  <section class='mt-32 bg-secondary'>
+    <div class='container mx-auto max-w-5xl p-8'>
+      <div class='grid grid-cols-1 gap-8 md:grid-cols-2'>
+        <Image
+          src={mistsOfSolarisFront}
+          alt='Beyond Front Cover'
+          format='avif'
+          class='h-96 w-auto'
+        />
+        <div class='flex flex-col gap-8'>
+          <p class='text-3xl'>Mists of Solaris</p>
+          <p>As we move back home, the mists rise...</p>
+          <Button size='lg'>BUY NOW</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='mt-32'>
+    <div class='container mx-auto max-w-3xl p-8'>
+      <p class='text-3xl'>SYNOPSIS</p>
+      <p class='mt-16'>
+        Hugo Enkows is back in the second installment of his thrilling science
+        fiction adventure series. After returning to his own world, Hugo finds
+        that things are not as they were before. The world is on the brink of
+        war, and Hugo must use his newfound powers to stop it.
+      </p>
+      <p class='mt-4'>
+        Hugo discovers that there is a powerful evil force at work, and it's
+        determined to destroy his world. Hugo must team up with his friends and
+        allies to stop this evil force and save the world.
+      </p>
+      <p class='mt-4'>
+        Along the way, Hugo will face new challenges and dangers. He will also
+        learn more about his powers and the destiny that awaits him.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

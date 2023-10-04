@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets'
+import { intoTheBeyondFront } from '~/assets'
+import { Button } from '~/components/ui/button'
+import { SITE_DESCRIPTION_BEYOND, SITE_TITLE_BEYOND } from '~/consts'
+
+import BaseLayout from '~/layouts/base-layout.astro'
+---
+
+<BaseLayout
+  site_title={SITE_TITLE_BEYOND}
+  site_description={SITE_DESCRIPTION_BEYOND}
+>
+  <section class='mt-32 bg-secondary'>
+    <div class='container mx-auto max-w-5xl p-8'>
+      <div class='grid grid-cols-1 gap-8 md:grid-cols-2'>
+        <Image
+          src={intoTheBeyondFront}
+          alt='Beyond Front Cover'
+          format='avif'
+          class='h-96 w-auto'
+        />
+        <div class='flex flex-col gap-8'>
+          <p class='text-3xl'>INTO THE BEYOND</p>
+          <p>
+            In the begining there was... light. This is where The Future World
+            begins...
+          </p>
+          <Button size='lg'>BUY NOW</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class='mt-32'>
+    <div class='container mx-auto max-w-3xl p-8'>
+      <p class='text-3xl'>SYNOPSIS</p>
+      <p class='mt-16'>
+        Hugo Enkows is a young engineer. He's always been fascinated by
+        technology and the future, and he dreams of one day making a difference
+        in the world.
+      </p>
+      <p class='mt-4'>
+        One day, Hugo is working on a new project in his lab when something goes
+        wrong. There's an explosion, and Hugo finds himself transported to a
+        strange new world. This world is much more advanced than his own, but
+        it's also very dangerous.
+      </p>
+      <p class='mt-4'>
+        Hugo quickly learns that he's not the only one who's been transported to
+        this new world. There are others, and they're all fighting for survival.
+        Hugo must use all of his skills and knowledge to stay alive and find a
+        way back home.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
