@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets'
+
+import BaseLayout from '~/layouts/base-layout.astro'
+import NewsletterForm from '~/components/newsletter-form'
+import { intoTheBeyondFront } from '~/assets'
+
+import { SITE_DESCRIPTION_NEWSLETTER, SITE_TITLE_NEWSLETTER } from '~/consts'
+---
+
+<BaseLayout
+  site_title={SITE_TITLE_NEWSLETTER}
+  site_description={SITE_DESCRIPTION_NEWSLETTER}
+>
+  <section class='mt-32'>
+    <div class='container mx-auto min-h-screen max-w-3xl p-20'>
+      <div class='m-auto flex flex-col items-center gap-8'>
+        <Image src={intoTheBeyondFront} alt='' class='h-96 w-auto' />
+        <h1 class='text-center text-6xl'>
+          Subscribe to the<br />
+           Dan Jinzle Newsletter
+        </h1>
+        <p class='text-xl'>
+          Subscirbe to my newsletter and receive weekyly updates on projects I
+          am starting, recently published books and updates on my progress.
+        </p>
+        <NewsletterForm client:load />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

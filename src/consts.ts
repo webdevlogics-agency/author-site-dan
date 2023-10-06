@@ -4,8 +4,8 @@
 export const SITE_TITLE = 'Dan Jinzle | Author'
 export const SITE_DESCRIPTION = 'Dan Jinzle | Author | Home Page!'
 
-export const SITE_TITLE_CONTACT = 'Dan Jinzle | Contact PAGE'
-export const SITE_DESCRIPTION_CONTACT = 'Contact Page for Dan Jinzle'
+export const SITE_TITLE_NEWSLETTER = 'Dan Jinzle | Newsletter PAGE'
+export const SITE_DESCRIPTION_NEWSLETTER = 'Newsletter Page for Dan Jinzle'
 
 export const SITE_TITLE_ABOUT = 'Dan Jinzle | About Page'
 export const SITE_DESCRIPTION_ABOUT =
