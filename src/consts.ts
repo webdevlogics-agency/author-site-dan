@@ -28,3 +28,5 @@ export const SITE_DESCRIPTION_TREE = 'The first novel in the Tree Series'
 
 export const SITE_TITLE_BLOG = 'Dan Jinzle | Blog PAGE'
 export const SITE_DESCRIPTION_BLOG = 'Blog Page for Dan Jinzle'
+
+export const NEWSLETTER = 'Web Dev Logics Newsletter'

@@ -1,0 +1,19 @@
+---
+export const prerender = false
+import BaseLayout from '~/layouts/base-layout.astro'
+const { slug } = Astro.params
+import UnSubscribeForm from '~/components/unsubscribe-form'
+---
+
+<BaseLayout
+  site_title='Dan Jinzle | Unsubscribe'
+  site_description='Unsubscribe page for Dan Jinzle'
+>
+  <section>
+    <div
+      class='container m-auto flex h-screen w-full max-w-7xl p-8 text-center'
+    >
+      <UnSubscribeForm unsubscribeId={slug as string} client:load />
+    </div>
+  </section>
+</BaseLayout>
