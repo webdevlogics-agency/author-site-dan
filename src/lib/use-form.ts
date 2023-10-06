@@ -13,13 +13,10 @@ const submit = async (form: FormFields) => {
     unsubscribeId: uuidv4(),
   }
 
-  const res = await fetch(
-    'https://8cyu15hfp6.execute-api.us-west-2.amazonaws.com/v1/subscribe',
-    {
-      method: 'POST',
-      body: JSON.stringify(dataToSubmit),
-    },
-  )
+  const res = await fetch(import.meta.env.PUBLIC_AWSAPI, {
+    method: 'POST',
+    body: JSON.stringify(dataToSubmit),
+  })
   console.log(res)
   if (res.status === 200) {
     showToast({
