@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets'
+import { Picture } from 'astro:assets'
 import BaseLayout from '~/layouts/base-layout.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '~/consts'
 import { Button } from '~/components/ui/button'
@@ -13,10 +13,12 @@ import { treeHutch } from '~/assets'
     <div
       class='container mx-auto mt-32 flex h-[500px] max-w-7xl flex-col items-center justify-center gap-4 p-8 md:items-start md:justify-end'
     >
-      <p class='text-5xl text-secondary'>
+      <p class='text-2xl text-secondary md:text-4xl'>
         Exploring the Future Through Science Fiction.
       </p>
-      <p class='text-2xl text-secondary'>Sign Up for Dan Jinzle's Newsletter</p>
+      <p class='text-xl text-secondary md:text-2xl'>
+        Sign Up for Dan Jinzle's Newsletter
+      </p>
       <a href='/newsletter'>
         <Button class='rounded-full' size='lg'>NEWSLETTER</Button>
       </a>
@@ -33,7 +35,11 @@ import { treeHutch } from '~/assets'
           </div>
           <!-- <Image src={astronautMoon} alt='' /> -->
           <p class='text-center'>Into The Beyond</p>
-          <a href='/books/into-the-beyond' class='text-center'>
+          <a
+            href='/books/into-the-beyond'
+            aria-label='Link to Into the Beyond Book'
+            class='text-center'
+          >
             <Button class='rounded-full'>READ MORE</Button>
           </a>
         </div>
@@ -44,7 +50,11 @@ import { treeHutch } from '~/assets'
           </div>
           <!-- <Image src={astronautMoon} alt='' /> -->
           <p class='text-center'>Mists Of Solaris</p>
-          <a href='/books/mists-of-solaris' class='text-center'>
+          <a
+            href='/books/mists-of-solaris'
+            aria-label='Link to Mists of Solaris'
+            class='text-center'
+          >
             <Button class='rounded-full'>READ MORE</Button>
           </a>
         </div>
@@ -55,7 +65,11 @@ import { treeHutch } from '~/assets'
           </div>
           <!-- <Image src={astronautMoon} alt='' /> -->
           <p class='text-center'>Future Human</p>
-          <a href='/books/future-human' class='text-center'>
+          <a
+            href='/books/future-human'
+            aria-label='Link to Future Human'
+            class='text-center'
+          >
             <Button class='rounded-full'>READ MORE</Button>
           </a>
         </div>
@@ -65,10 +79,17 @@ import { treeHutch } from '~/assets'
   <section class='mt-24'>
     <div class='container mx-auto mt-24 flex max-w-7xl justify-center p-8'>
       <div
-        class='flex h-[500px] w-full items-center justify-center gap-8 bg-seaBackground bg-cover'
+        class='grid h-[600px] w-full grid-cols-1 items-center gap-8 bg-seaBackground bg-cover md:grid-cols-2'
       >
-        <Image src={treeHutch} alt='' class='h-80 w-auto' />
-        <div class='flex flex-col gap-8 text-background'>
+        <div class='self-center justify-self-center'>
+          <Picture
+            src={treeHutch}
+            alt=''
+            formats={['avif', 'webp']}
+            class='h-80 w-auto'
+          />
+        </div>
+        <div class='flex flex-col gap-8 text-center text-background'>
           <p class='text-5xl'>The Tree Hutch</p>
           <p class='text-2xl'>Humanity's last hope is a tree house.</p>
           <a href='/books/the-tree-hutch'>
@@ -98,7 +119,7 @@ import { treeHutch } from '~/assets'
             let i = 0
             function changeWords() {
               setInterval(function () {
-                wordsText.textContent =
+                wordsText!.textContent =
                   wordsArray[(i = (i + 1) % wordsArray.length)]
               }, 3000)
             }
